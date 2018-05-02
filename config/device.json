@@ -1,0 +1,43 @@
+{
+	"deviceName": "device",
+	"deviceID": "ID",
+	"version": "1.0",
+	"servicePort": "8888",
+	"services":[
+		{
+			"name":"auth",
+			"description":"Authentication method",
+			"datatype":"text",
+			"api": "user/auth",
+			"method": "POST",
+			"parameter":
+			[
+				{
+					"name":"username",
+					"description":"username"
+				},
+				{
+					"name":"password",
+					"description":"password"
+				}
+			]
+		},
+		{
+			"name":"getProductionData",
+			"description":"get the production data of this department",
+			"datatype":"text",
+			"api":"production/data/:date1/:date2",
+			"method":"GET",
+			"parameter":[
+				{
+					"name":"date1",
+					"description":"date start of the data, format must be yyyy-mm-dd"
+				},
+				{
+					"name":"date2",
+					"description":"date end of the data, format must be yyyy-mm-dd"
+				}
+			]
+		}
+	]
+}
