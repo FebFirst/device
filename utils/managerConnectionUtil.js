@@ -5,34 +5,36 @@ let Promise = require('bluebird');
 let dataPath = "data/";
 
 module.exports = {
-	writeData: function(file, data){
-		//todo: merge data
-		fs.writeFileSync(dataPath + file, data);
-	},
-
-	readData: function(file){
-		return new Promise((resolve, reject)=>{
-			let data = fs.readFileSync(file);
-			resolve(data);
-		}).timeout(5000);
-	},
 
 	managerRegister : function(manager){
 		return new Promise((resolve, reject)=>{
 			request({
 				url: manager,
-				method: 'GET',
+				method: 'POST',
 				headers:{
-					"content-type": "application/json"
+					"content-type": "x-www-form-urlencoded"
 				},
 				//body: device
 			}, function(error, response, body){
 				if(!error && response.statusCode == 200){
 					resolve(body);
 				}else{
+					console.log(response);
 					reject(new Error("Manager Regist Error."));
 				}
 			});
-		})
+		});
+	},
+
+	managerRequestDataProcess: function(data){
+		let newTargetManager = data.data.resourceManager;
+		let newTargetName = data.data.resourceName;
+
+		data.data.resourceManager = data.data.targetManager;
+		data.data.resourceName = data.data.targetName;
+		data.data.targetManager = newTargetManager;
+		data.data.targetName = newTargetName;
+
+		return data;
 	}
 }

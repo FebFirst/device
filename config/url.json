@@ -1,0 +1,9 @@
+{
+	"manager":"manager",
+	"device":"device",
+	"deviceAuth":"device/auth",
+	"deviceServiceList":"device/services",
+	"deviceService":{
+		"getProductionData":"device/service/getProductionData"
+	}
+}

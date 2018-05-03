@@ -3,8 +3,8 @@
 	"deviceID": "ID",
 	"version": "1.0",
 	"servicePort": "8888",
-	"services":[
-		{
+	"services":{
+		"auth":{
 			"name":"auth",
 			"description":"Authentication method",
 			"datatype":"text",
@@ -22,7 +22,7 @@
 				}
 			]
 		},
-		{
+		"getProductionData":{
 			"name":"getProductionData",
 			"description":"get the production data of this department",
 			"datatype":"text",
@@ -39,5 +39,5 @@
 				}
 			]
 		}
-	]
+	}
 }
