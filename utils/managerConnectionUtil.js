@@ -7,14 +7,21 @@ let dataPath = "data/";
 module.exports = {
 
 	managerRegister : function(manager){
+		let deviceData = {"contentType":"regist",
+											"data":{
+												"manager": "上海市闵行区东川路800号软件学院3108室",
+												"deviceName":"投影仪",
+												"deviceID":"18-31-BF-28-F6-36",
+												"location":"192.168.2.33"
+											}};
 		return new Promise((resolve, reject)=>{
 			request({
 				url: manager,
 				method: 'POST',
 				headers:{
-					"content-type": "x-www-form-urlencoded"
+					"content-type": "application/json"
 				},
-				//body: device
+				body: JSON.stringify(deviceData)
 			}, function(error, response, body){
 				if(!error && response.statusCode == 200){
 					resolve(body);
