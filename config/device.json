@@ -1,8 +1,9 @@
 {
 	"deviceName": "device",
-	"deviceID": "ID",
+	"deviceID": "18-31-BF-28-F6-36",
 	"version": "1.0",
-	"servicePort": "8888",
+	"serviceLocation":"http://192.168.1.108",
+	"servicePort": "3000",
 	"services":{
 		"auth":{
 			"name":"auth",

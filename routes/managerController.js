@@ -5,12 +5,14 @@ module.exports = function(app){
 	 * process manager request
 	 */
 	app.post('/manager', function(req, res, next){
-		let data = req.body.data;
+		let data = {"contentType": req.body.contentType, "data":req.body.data};
+		// console.log(req.body);
 		managerService.managerRequestProcessor(data).then((result)=>{
 			console.log(result);
 			res.send(result);
 		}).catch((error)=>{
-			next(error);
+			console.log(error);
+			//next(error);
 		});
 	});
 

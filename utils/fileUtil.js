@@ -1,10 +1,12 @@
 let fs = require('fs');
 
+let filePath = require('../config/filePath.json');
+
 module.exports = {
 	
 	writeFile: function(file, data){
 		//todo: merge data
-		fs.writeFileSync(dataPath + file, data);
+		fs.writeFileSync(filePath.filePath + file, data);
 	},
 
 	readFile: function(file){
