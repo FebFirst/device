@@ -39,6 +39,16 @@
 					"description":"date end of the data, format must be yyyy-mm-dd"
 				}
 			]
+		},
+
+		"getScreen":{
+			"name":"getScreen",
+			"discription":"get the screen's data of the computer",
+			"dataType":"stream/movie",
+			"api":"googol/screen",
+			"parameter":[
+				
+			]
 		}
 	}
 }

@@ -23,9 +23,9 @@ function getIpAndMac(){
 
 module.exports = {
 
-	managerRegister : async function(manager){
+	managerRegister : function(manager){
 		
-		return new Promise((resolve, reject)=>{
+		return new Promise(async function(resolve, reject){
 			try{
 				let ipMac = getIpAndMac();
 				let manager = await fileUtil.readFile(filePath.filePath + filePath.managerdb);
